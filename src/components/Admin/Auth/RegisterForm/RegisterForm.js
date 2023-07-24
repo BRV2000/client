@@ -1,11 +1,16 @@
 import React,{useState} from 'react'
 import {Form} from "semantic-ui-react";
 import {useFormik} from "formik";
+import {Auth} from "../../../../api";
 import {initialValues,validationSchem} from "./registerForm.form";
 import "./RegisterForm.scss";
-import * as Yup from "yup";
 
-export  function RegisterForm() {
+
+const authController = new Auth();
+
+export  function RegisterForm(props) {
+  const {openLogin} = props;
+
   const [error,setError] = useState("");
 
   const formik = useFormik({
@@ -16,7 +21,8 @@ export  function RegisterForm() {
     onSubmit: async (formValue) => {
       try {
         setError("");
-        console.log(formValue);
+        await authController.register(formValue);
+        openLogin();
       } catch (error) {
         setError("Error en el Servidor");
       }
