@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {Form} from "semantic-ui-react";
 import {useFormik} from "formik";
 import {Auth} from "../../../../api";
-import {initialValues,validationSchem} from "./registerForm.form";
+import {initialValues,validationSchema} from "./registerForm.form";
 import "./RegisterForm.scss";
 
 
@@ -15,7 +15,7 @@ export  function RegisterForm(props) {
 
   const formik = useFormik({
     initialValues: initialValues(),
-    validationSchema: validationSchem(),
+    validationSchema: validationSchema(),
     validationOnChange: false,
 
     onSubmit: async (formValue) => {
