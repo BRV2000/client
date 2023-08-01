@@ -1,7 +1,10 @@
 import React from 'react';
 import {Form} from "semantic-ui-react";
 import{useFormik} from "formik";
+import {Auth} from "../../../../api"
 import {initialValues,validationSchema} from "./LoginForm.Form"
+
+const authController = new Auth();
 
 
 export  function LoginForm() {
@@ -11,7 +14,8 @@ export  function LoginForm() {
     validateOnChange: false,
     onSubmit: async (formValue) =>{
         try {
-            console.log(formValue);
+            const response = await authController.login(formValue);
+            console.log(response);
         } catch (error) {
             console.error(error);
         }
