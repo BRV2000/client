@@ -49,7 +49,7 @@ export function AuthProvider(props) {
             console.error(error);
         }
     };
-    
+    // Comienzo del Login 
     const login  = async (accessToken) => {
         try {
             const response = await userController.getMe(accessToken);
@@ -63,7 +63,9 @@ export function AuthProvider(props) {
             console.error(error);
         }
     };
+    //Fin del Login
 
+    // Comienzo del Logout
     const logout = () =>{
         setUser(null);
         setToken(null);
