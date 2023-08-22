@@ -7,7 +7,6 @@ import "./AdminMenu.scss";
 export  function AdminMenu() {
   
   const {pathname} = useLocation();
-    
   const {user:{role},} = useAuth();
   const isAdmin = role === "admin";
 
