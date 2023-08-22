@@ -14,7 +14,7 @@ export  function Logout() {
   
     return (
     <Button icon basic color="red" onClick={onLogout}>
-        <Icon name='power of'/> Cerrar Sesion
+        <Icon name='power off'/> Cerrar Sesion
     </Button>    
   );
 }
