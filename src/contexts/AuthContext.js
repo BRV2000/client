@@ -77,6 +77,7 @@ export function AuthProvider(props) {
         accessToken: token,
         user,
         login,
+        logout,
     };
     if(loading) return null;
     return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>
